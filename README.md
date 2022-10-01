@@ -16,25 +16,25 @@ Basically, this List Component is used to display an unordered List with some te
 ### Q-2: What problems / warnings are there with code?
 Ans:
 
-  1-> array should be arrayOf as we are defining type of array elements as well. shapeOf should be shape(syntax error).
+  1-> **array** should be **arrayOf** as we are defining type of array elements as well. **shapeOf** should be **shape(syntax error)**.
   
   ![image](https://user-images.githubusercontent.com/63242259/193395325-12975507-a3ed-4db3-bf74-90f84a1af160.png)
 
-  2-> following the convention, useState variables being misplaced. the return value of useState should be destructured like this: [selectedIndex, setSelectedIndex] =             useState()
+  2-> following the convention, **useState** variables being misplaced. the return value of **useState** should be destructured like this: **[selectedIndex, setSelectedIndex] =             useState()**
   
   ![image](https://user-images.githubusercontent.com/63242259/193395359-59bde51b-d99d-48e4-af86-3720b2fe2d6a.png)
 
-  3-> the isSelected prop expects a boolean value. I was able to catch this semantic error through propTypes defined for the SingleListItem component. Here is one possible       solution: isSelected={selectedIndex === index}
+  3-> the **isSelected** prop expects a boolean value. I was able to catch this semantic error through propTypes defined for the **SingleListItem** component. Here is one possible       solution: **isSelected={selectedIndex === index}**
   
   ![image](https://user-images.githubusercontent.com/63242259/193395380-855b5ea1-3f18-49dc-b24e-5b052517cdaa.png)
 
-  4-> onClick events should have a function reference instead of a function call. 
+  4-> **onClick** events should have a function reference instead of a function call. 
   
     <li style={{ backgroundColor: isSelected ? "green" : "red" }}
      onClick={onClickHandler(index)}>
       {text}</li>
   
-  5-> Passing a number selectedIndex to isSelected which should be a bool.
+  5-> Passing a number **selectedIndex** to **isSelected** which should be a bool.
   
     <ul style={{ textAlign: "left" }}>
        {items.map((item, index) => (
